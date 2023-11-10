@@ -1,51 +1,48 @@
 import PlanetaryAge from "../src/js/planetaryage.js";
 
 describe("PlanetaryAge", () => {
-    let planetary
-    
+    let mercury
+    let venus
+    let moon
+    let mars
+    let jupiter
+    let saturn
+    let uranus
+    let neptune
+    let pluto
     beforeEach(() => {
-        planetary = new PlanetaryAge(6, 27, 1998);
+        mercury = new PlanetaryAge(6, 27, 1998);
+        venus = new PlanetaryAge(6, 27, 1998, "venus");
+        moon = new PlanetaryAge(6, 27, 1998, "moon");
+        mars = new PlanetaryAge(6, 27, 1998, "mars");
+        jupiter = new PlanetaryAge(6, 27, 1998, "jupiter");
+        saturn = new PlanetaryAge(6, 27, 1998, "saturn");
+        uranus = new PlanetaryAge(6, 27, 1998, "uranus");
+        neptune = new PlanetaryAge(6, 27, 1998, "neptune");
+        pluto = new PlanetaryAge(6, 27, 1998, "pluto");
     });
     
     test("Should create an object that accepts and stores a day, month and year of birth from a user", () => {
-        expect(planetary.dob).toEqual([6, 27, 1998]);
+        expect(mercury.dob).toEqual([6, 27, 1998]);
     });
 
     test("Should create a key that stores the users present age in earth days & years based off 'dob'", () => {
-        planetary.earthAge()
-        expect(planetary.earthAgeDays).toEqual(9267);
-        expect(planetary.earthAgeYears).toEqual(25);
+        expect(mercury.earthAgeDays()).toEqual(9268);
+        expect(mercury.earthAgeYears()).toEqual(25);
     });
 
     test("Should add a key to the object with an age in mercurial years", () => {
-        planetary.solarSystemAge();
-        const EarthAge = new PlanetaryAge(6, 27, 1998);
-        EarthAge.earthAge();
-        EarthAge.solarSystemAge();
-        expect(planetary.mercurialAgeYears).toEqual(105);
-        expect(EarthAge.mercurialAgeYears).toEqual(105);
+        expect(mercury.solarSystemAge()).toEqual(105.32);
     });
 
     test("Should add keys to the object container all other planetary ages in years", () => {
-        planetary.solarSystemAge();
-        const EarthAge = new PlanetaryAge(6, 27, 1998);
-        EarthAge.earthAge();
-        EarthAge.solarSystemAge();
-        expect(planetary.venusianAgeYears).toEqual(41);
-        expect(planetary.martianAgeYears).toEqual(13);
-        expect(planetary.jovianAgeYears).toEqual(2.14);
-        expect(planetary.saturnianAgeYears).toEqual(0.86);
-        expect(planetary.uranianAgeYears).toEqual(0.30);
-        expect(planetary.neptunianAgeYears).toEqual(0.15);
-        expect(planetary.plutonianAgeYears).toEqual(0.10);
-        expect(planetary.lunarAgeYears).toEqual(26);
-        expect(EarthAge.venusianAgeYears).toEqual(41);
-        expect(EarthAge.martianAgeYears).toEqual(13);
-        expect(EarthAge.jovianAgeYears).toEqual(2.14);
-        expect(EarthAge.saturnianAgeYears).toEqual(0.86);
-        expect(EarthAge.uranianAgeYears).toEqual(0.30);
-        expect(EarthAge.neptunianAgeYears).toEqual(0.15);
-        expect(EarthAge.plutonianAgeYears).toEqual(0.10);
-        expect(EarthAge.lunarAgeYears).toEqual(26);
-    })
+        expect(venus.solarSystemAge()).toEqual(41.19);
+        expect(moon.solarSystemAge()).toEqual(26.15);
+        expect(mars.solarSystemAge()).toEqual(13.49);
+        expect(jupiter.solarSystemAge()).toEqual(2.14);
+        expect(saturn.solarSystemAge()).toEqual(0.86);
+        expect(uranus.solarSystemAge()).toEqual(0.30);
+        expect(neptune.solarSystemAge()).toEqual(0.15);
+        expect(pluto.solarSystemAge()).toEqual(0.10);
+    });
 });
