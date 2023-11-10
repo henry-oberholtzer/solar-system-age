@@ -27,6 +27,7 @@ This projects uses a JS class constructor and methods to return a users age
 *   Uses a class to return a users age on Uranus (Uranian orbital period is 30,687 earth days)
 *   Uses a class to return a users age on Neptune (Neptunian orbital period is 60,190 earth days)
 *   Uses a class to return a users age on Pluto (Plutonian orbital period is 90,650 earth days)
+*   Uses a class to return a users age on the Moon (Lunar orbital period around earth is 354.36 earth days)
 
 ## Setup & Installation Requirements
 

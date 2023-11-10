@@ -17,5 +17,13 @@ export default class PlanetaryAge {
             this.earthAge();
         }
         this.mercurialAgeYears = Math.round((this.earthAgeDays / 88))
+        this.venusianAgeYears = Math.round((this.earthAgeDays / 225))
+        this.martianAgeYears = Math.round((this.earthAgeDays / 687))
+        this.jovianAgeYears = Math.round((this.earthAgeDays / 4332.59) * 100) / 100
+        this.saturnianAgeYears = Math.round((this.earthAgeDays / 10756) * 100) / 100
+        this.uranianAgeYears = Math.round((this.earthAgeDays / 30687) * 100) / 100
+        this.neptunianAgeYears = Math.round((this.earthAgeDays / 60190) * 100) / 100
+        this.plutonianAgeYears = Math.round((this.earthAgeDays / 90650) * 100) / 100
+        this.lunarAgeYears = Math.round((this.earthAgeDays / 354.36));
     }
 }

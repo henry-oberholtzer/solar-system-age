@@ -38,6 +38,7 @@ describe("PlanetaryAge", () => {
         expect(planetary.uranianAgeYears).toEqual(0.30);
         expect(planetary.neptunianAgeYears).toEqual(0.15);
         expect(planetary.plutonianAgeYears).toEqual(0.10);
+        expect(planetary.lunarAgeYears).toEqual(26);
         expect(EarthAge.venusianAgeYears).toEqual(41);
         expect(EarthAge.martianAgeYears).toEqual(13);
         expect(EarthAge.jovianAgeYears).toEqual(2.14);
@@ -45,5 +46,6 @@ describe("PlanetaryAge", () => {
         expect(EarthAge.uranianAgeYears).toEqual(0.30);
         expect(EarthAge.neptunianAgeYears).toEqual(0.15);
         expect(EarthAge.plutonianAgeYears).toEqual(0.10);
+        expect(EarthAge.lunarAgeYears).toEqual(26);
     })
 });
