@@ -11,7 +11,7 @@ describe("PlanetaryAge", () => {
         expect(planetary.dob).toEqual([6, 27, 1998]);
     });
 
-    test("Should create a key that stores the users present age in earth years, based off 'dob'", () => {
-        expect(planetary.earthYears).toEqual(25);
+    test("Should create a key that stores the users present age in earth days, based off 'dob'", () => {
+        expect(planetary.earthDays()).toEqual(9267);
     })
 });
