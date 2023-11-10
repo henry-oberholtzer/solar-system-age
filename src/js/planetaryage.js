@@ -25,6 +25,6 @@ export default class PlanetaryAge {
         };
         this.solarSystemAge = () => Math.round((this.earthAgeDays() / this.planets[planet]) * 100) / 100;
         this.yearsUntil = () => Math.round((((birthdayFuture - this.earthAgeYears()) * 365.25) / this.planets[planet]) * 100) / 100;
-        this.yearsSince = () => birthdayPast;
+        this.yearsSince = () => Math.round((((this.earthAgeYears() - birthdayPast) * 365.25) / this.planets[planet]) * 100) / 100;
     }
 }

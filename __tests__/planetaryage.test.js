@@ -66,7 +66,7 @@ describe("PlanetaryAge", () => {
         expect(jupiter.yearsSince()).toEqual(2.02);
         expect(saturn.yearsSince()).toEqual(0.81);
         expect(uranus.yearsSince()).toEqual(0.29);
-        expect(neptune.yearsSince()).toEqual(0.14);
-        expect(pluto.yearsSince()).toEqual(0.09);
+        expect(neptune.yearsSince()).toEqual(0.15);
+        expect(pluto.yearsSince()).toEqual(0.1);
     });
 });
