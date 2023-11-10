@@ -9,6 +9,6 @@ export default class PlanetaryAge {
         const birthdayMS = birthday[Symbol.toPrimitive]("number");
         const days = Math.round((nowMS - birthdayMS) / (1000 * 60 * 60 * 24));
         this.earthAgeDays = days;
-        return days;
+        this.earthAgeYears = Math.round(days/364.25);
     }
 }
