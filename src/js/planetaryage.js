@@ -1,14 +1,9 @@
 export default class PlanetaryAge {
     constructor(month, day, year, planet = "mercury", birthdayFuture = 100, birthdayPast = 1) {
-        this.dob = [month, day, year];
+        this.dob = new Date(year, month - 1, day);
         this.earthAgeDays = () => {
-            const birthday = new Date(
-                this.dob[2],
-                this.dob[0] - 1,
-                this.dob[1]
-            );
             const nowMS = Date.now();
-            const birthdayMS = birthday[Symbol.toPrimitive]("number");
+            const birthdayMS = this.dob[Symbol.toPrimitive]("number");
             return Math.round((nowMS - birthdayMS) / (1000 * 60 * 60 * 24));
         };
         this.earthAgeYears = () => Math.round(this.earthAgeDays() / 365.25);

@@ -23,7 +23,8 @@ describe("PlanetaryAge", () => {
     });
     
     test("Should create an object that accepts and stores a day, month and year of birth from a user", () => {
-        expect(mercury.dob).toEqual([6, 27, 1998]);
+        const dateObject = new Date(1998, 5, 27);
+        expect(mercury.dob).toEqual(dateObject);
     });
 
     test("Should create a key that stores the users present age in earth days & years based off 'dob'", () => {

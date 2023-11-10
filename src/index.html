@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Planetary Age Calculator</title>
 </head>
 <body>
-    
+    <div id="main-form">
+        <form id="form">
+            <label for="dob">Date of Birth</label>
+            <div id="dob">
+                <input id="month" type="text" inputmode="numeric" min="1" max="12" maxlength="2" placeholder="MM">
+                <input id="day" type="text" inputmode="numeric" min="1" max="12" maxlength="2" placeholder="DD">
+                <input id="year" type="text" inputmode="numeric" min="-6000" max="2023" maxlength="4" placeholder="YYYY">
+            </div>
+            <label for="past-birthday" min="0">An age you once were</label>
+            <input id="past-birthday" type="text" inputmode="numeric">
+            <label for="future-birthday">An age you will be in the future</label>
+            <input id="future-birthday" type="text" inputmode="numeric">
+            <label for="planet">Select a Celestial Object</label>
+            <select id="planet">
+                <option value="mercury" selected>Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="moon">The Moon</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+                <option value="pluto">Pluto</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
 </body>
 </html>
