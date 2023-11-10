@@ -12,14 +12,14 @@ describe("PlanetaryAge", () => {
     let pluto
     beforeEach(() => {
         mercury = new PlanetaryAge(6, 27, 1998);
-        venus = new PlanetaryAge(6, 27, 1998, "venus");
-        moon = new PlanetaryAge(6, 27, 1998, "moon");
-        mars = new PlanetaryAge(6, 27, 1998, "mars");
-        jupiter = new PlanetaryAge(6, 27, 1998, "jupiter");
-        saturn = new PlanetaryAge(6, 27, 1998, "saturn");
-        uranus = new PlanetaryAge(6, 27, 1998, "uranus");
-        neptune = new PlanetaryAge(6, 27, 1998, "neptune");
-        pluto = new PlanetaryAge(6, 27, 1998, "pluto");
+        venus = new PlanetaryAge(6, 27, 1998, "venus", 100, 1);
+        moon = new PlanetaryAge(6, 27, 1998, "moon", 100, 1);
+        mars = new PlanetaryAge(6, 27, 1998, "mars", 100, 1);
+        jupiter = new PlanetaryAge(6, 27, 1998, "jupiter", 100, 1);
+        saturn = new PlanetaryAge(6, 27, 1998, "saturn", 100, 1);
+        uranus = new PlanetaryAge(6, 27, 1998, "uranus", 100, 1);
+        neptune = new PlanetaryAge(6, 27, 1998, "neptune", 100, 1);
+        pluto = new PlanetaryAge(6, 27, 1998, "pluto", 100, 1);
     });
     
     test("Should create an object that accepts and stores a day, month and year of birth from a user", () => {
@@ -44,5 +44,17 @@ describe("PlanetaryAge", () => {
         expect(uranus.solarSystemAge()).toEqual(0.30);
         expect(neptune.solarSystemAge()).toEqual(0.15);
         expect(pluto.solarSystemAge()).toEqual(0.10);
+    });
+
+    test("Should determine how many years on their chosen planet will have to pass until their chosen earth birthday", () => {
+        expect(mercury.yearsUntil()).toEqual(311.29);
+        expect(venus.yearsUntil()).toEqual(121.75);
+        expect(moon.yearsUntil()).toEqual(77.30);
+        expect(mars.yearsUntil()).toEqual(39.87);
+        expect(jupiter.yearsUntil()).toEqual(6.32);
+        expect(saturn.yearsUntil()).toEqual(2.54);
+        expect(uranus.yearsUntil()).toEqual(0.89);
+        expect(neptune.yearsUntil()).toEqual(0.46);
+        expect(pluto.yearsUntil()).toEqual(0.30);
     });
 });

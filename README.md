@@ -18,8 +18,8 @@ This projects uses a JS class constructor and methods to return a users age
 *   Uses a class to return a users age on Venus (Venusian orbital period is 225 earth days)
 *   Uses a class to return a users age on Mars (Martian orbital period is 687 earth days)
 *   Uses a class to return a users age on Jupiter (Jovian orbital period is 4,332.59 earth days)
-*   Uses a class to determine how long ago a previous planetary birthday was
-*   Uses a class to determine how long until a future planetary birthday   
+*   Uses a class to determine how many years on their chosen planet have passed since their chosen earth birthday
+*   Uses a class to determine how many years on their chosen planet will need to pass until their chosen earth birthday
 
 #### Additional features
 
