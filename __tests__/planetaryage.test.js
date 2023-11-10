@@ -25,4 +25,25 @@ describe("PlanetaryAge", () => {
         expect(planetary.mercurialAgeYears).toEqual(105);
         expect(EarthAge.mercurialAgeYears).toEqual(105);
     });
+
+    test("Should add keys to the object container all other planetary ages in years", () => {
+        planetary.solarSystemAge();
+        const EarthAge = new PlanetaryAge(6, 27, 1998);
+        EarthAge.earthAge();
+        EarthAge.solarSystemAge();
+        expect(planetary.venusianAgeYears).toEqual(41);
+        expect(planetary.martianAgeYears).toEqual(13);
+        expect(planetary.jovianAgeYears).toEqual(2.14);
+        expect(planetary.saturnianAgeYears).toEqual(0.86);
+        expect(planetary.uranianAgeYears).toEqual(0.30);
+        expect(planetary.neptunianAgeYears).toEqual(0.15);
+        expect(planetary.plutonianAgeYears).toEqual(0.10);
+        expect(EarthAge.venusianAgeYears).toEqual(41);
+        expect(EarthAge.martianAgeYears).toEqual(13);
+        expect(EarthAge.jovianAgeYears).toEqual(2.14);
+        expect(EarthAge.saturnianAgeYears).toEqual(0.86);
+        expect(EarthAge.uranianAgeYears).toEqual(0.30);
+        expect(EarthAge.neptunianAgeYears).toEqual(0.15);
+        expect(EarthAge.plutonianAgeYears).toEqual(0.10);
+    })
 });
