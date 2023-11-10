@@ -57,4 +57,16 @@ describe("PlanetaryAge", () => {
         expect(neptune.yearsUntil()).toEqual(0.46);
         expect(pluto.yearsUntil()).toEqual(0.30);
     });
+
+    test("Should determine determine how many years on their chosen planet have passed since their chosen earth birthday", () => {
+        expect(mercury.yearsSince()).toEqual(99.61);
+        expect(venus.yearsSince()).toEqual(38.96);
+        expect(moon.yearsSince()).toEqual(24.74);
+        expect(mars.yearsSince()).toEqual(12.76);
+        expect(jupiter.yearsSince()).toEqual(2.02);
+        expect(saturn.yearsSince()).toEqual(0.81);
+        expect(uranus.yearsSince()).toEqual(0.29);
+        expect(neptune.yearsSince()).toEqual(0.14);
+        expect(pluto.yearsSince()).toEqual(0.09);
+    });
 });
