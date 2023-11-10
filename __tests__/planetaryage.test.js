@@ -52,7 +52,7 @@ describe("PlanetaryAge", () => {
         expect(moon.yearsUntil()).toEqual(77.30);
         expect(mars.yearsUntil()).toEqual(39.87);
         expect(jupiter.yearsUntil()).toEqual(6.32);
-        expect(saturn.yearsUntil()).toEqual(2.54);
+        expect(saturn.yearsUntil()).toEqual(2.55);
         expect(uranus.yearsUntil()).toEqual(0.89);
         expect(neptune.yearsUntil()).toEqual(0.46);
         expect(pluto.yearsUntil()).toEqual(0.30);

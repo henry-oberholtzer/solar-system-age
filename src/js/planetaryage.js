@@ -12,24 +12,18 @@ export default class PlanetaryAge {
             return Math.round((nowMS - birthdayMS) / (1000 * 60 * 60 * 24));
         };
         this.earthAgeYears = () => Math.round(this.earthAgeDays() / 365.25);
-        this.solarSystemAge = () => {
-            const planets = {
-                mercury: 88,
-                venus: 225,
-                moon: 354.36,
-                mars: 687,
-                jupiter: 4332.59,
-                saturn: 10756,
-                uranus: 30687,
-                neptune: 60190,
-                pluto: 90650,
-            };
-            return (
-                Math.round((this.earthAgeDays() / planets[planet]) * 100) / 100
-            );
+        this.planets = {
+            mercury: 88,
+            venus: 225,
+            moon: 354.36,
+            mars: 687,
+            jupiter: 4332.59,
+            saturn: 10756,
+            uranus: 30687,
+            neptune: 60190,
+            pluto: 90650,
         };
-        this.yearsUntil = () => {
-
-        };
+        this.solarSystemAge = () => Math.round((this.earthAgeDays() / this.planets[planet]) * 100) / 100;
+        this.yearsUntil = () => Math.round((((birthdayFuture - this.earthAgeYears()) * 365.25) / this.planets[planet]) * 100) / 100;
     }
 }
