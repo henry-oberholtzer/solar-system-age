@@ -12,5 +12,10 @@ export default class PlanetaryAge {
         this.earthAgeYears = Math.round(days / 364.25);
     }
 
-    solarSystemAge() {}
+    solarSystemAge() {
+        if (Object.hasOwn(this, 'earthAgeDays') === false) {
+            this.earthAge();
+        }
+        this.mercurialAgeYears = Math.round((this.earthAgeDays / 88))
+    }
 }

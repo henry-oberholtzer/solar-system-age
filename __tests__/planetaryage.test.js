@@ -19,6 +19,10 @@ describe("PlanetaryAge", () => {
 
     test("Should add a key to the object with an age in mercurial years", () => {
         planetary.solarSystemAge();
+        const EarthAge = new PlanetaryAge(6, 27, 1998);
+        EarthAge.earthAge();
+        EarthAge.solarSystemAge();
         expect(planetary.mercurialAgeYears).toEqual(105);
+        expect(EarthAge.mercurialAgeYears).toEqual(105);
     });
 });
