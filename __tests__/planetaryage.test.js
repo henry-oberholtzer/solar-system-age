@@ -11,13 +11,14 @@ describe("PlanetaryAge", () => {
         expect(planetary.dob).toEqual([6, 27, 1998]);
     });
 
-    test("Should create a key that stores the users present age in earth days, based off 'dob'", () => {
-        planetary.earthAge();
+    test("Should create a key that stores the users present age in earth days & years based off 'dob'", () => {
+        planetary.earthAge()
         expect(planetary.earthAgeDays).toEqual(9267);
+        expect(planetary.earthAgeYears).toEqual(25);
     });
 
-    test("Should add a key to the object with an age in earth years", () => {
-        planetary.earthAge();
-        expect(planetary.earthAgeYears).toEqual(25);
+    test("Should add a key to the object with an age in mercurial years", () => {
+        planetary.solarSystemAge();
+        expect(planetary.mercurialAgeYears).toEqual(105);
     });
 });
