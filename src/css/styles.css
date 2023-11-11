@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#primary {
+    margin: 5rem;
+}
+
+.block {
+    width: 22rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+#title {
+    width: 36rem;
+    margin: auto;
+    text-align: center;
+    border: none;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+}
+
+input {
+    width: 1.75rem;
+    display: inline;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+#year, #future-birthday {
+    width: 3rem;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

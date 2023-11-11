@@ -7,10 +7,9 @@ const printResults = (planetaryAgeObject) => {
     const month = date.toLocaleString("default", { month: "long" });
     const weekday = date.toLocaleString("default", { weekday: "long" });
     const year = date.toLocaleString("default", { year: "numeric" });
-    const chosenPlanet = planetaryAgeObject.planetChoice
-        .charAt(0)
-        .toUpperCase()
-        + planetaryAgeObject.planetChoice.slice(1);
+    const chosenPlanet =
+        planetaryAgeObject.planetChoice.charAt(0).toUpperCase() +
+        planetaryAgeObject.planetChoice.slice(1);
     const birthdayFuture = planetaryAgeObject.birthdayFuture;
     const birthdayPast = planetaryAgeObject.birthdayPast;
     const ageEarthDays = planetaryAgeObject.earthAgeDays();
@@ -42,7 +41,7 @@ const printResults = (planetaryAgeObject) => {
         if (yearsSince < 1) {
             return `Finally, rejoice, youth is with you, it has only been ${yearsSince} of a year on ${chosenPlanet} since you were ${birthdayPast}.`;
         } else
-            return `Sadly, it has been ${yearsSince} long years on ${chosenPlanet}, when you were the tender age of ${birthdayPast}.`;
+            return `In the time since you were the tender age of ${birthdayPast}, it has been ${yearsSince} long years on ${chosenPlanet}.`;
     };
     paragraph.append(
         introString,
@@ -55,23 +54,43 @@ const printResults = (planetaryAgeObject) => {
     musings.append(paragraph);
 };
 
+const printError = () => {
+    document.getElementById("musings").innerHTML = "";
+    const musings = document.getElementById("musings");
+    const paragraph = document.createElement("p");
+    const upsetString = "Alright, though you could outsmart me? Well, I prepared for this. Please re-enter your 'future' and 'past' ages.";
+    paragraph.append(upsetString);
+    musings.append(paragraph);
+};
+
 document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
-    const year = parseInt(document.getElementById("year").value);
-    const month = parseInt(document.getElementById("month").value);
-    const day = parseInt(document.getElementById("day").value);
-    const pastAge = parseInt(document.getElementById("past-birthday").value);
-    const futureAge = parseInt(
-        document.getElementById("future-birthday").value
-    );
+    const year = parseInt(document.getElementById("year").value, 10);
+    const month = parseInt(document.getElementById("month").value, 10);
+    const day = parseInt(document.getElementById("day").value, 10);
+    const pastAge = () => {
+        return document.getElementById("past-birthday").value
+            ? parseInt(document.getElementById("past-birthday").value)
+            : 3;
+    };
+    const futureAge = () => {
+        return document.getElementById("future-birthday").value
+            ? parseInt(document.getElementById("future-birthday").value)
+            : 103;
+    };
     const planet = document.getElementById("planet").value;
     const planetaryAge = new PlanetaryAge(
         month,
         day,
         year,
         planet,
-        futureAge,
-        pastAge
+        futureAge(),
+        pastAge()
     );
-    printResults(planetaryAge);
+    if (futureAge() < pastAge()) {
+        return printError();
+    } else {
+        printResults(planetaryAge);
+    }
+    
 });

@@ -6,34 +6,52 @@
     <title>Planetary Age Calculator</title>
 </head>
 <body>
-    <div id="main-form">
-        <form id="form">
-            <label for="dob">Date of Birth</label>
-            <div id="dob">
-                <input id="month" type="text" inputmode="numeric" min="1" max="12" maxlength="2" placeholder="MM">
-                <input id="day" type="text" inputmode="numeric" min="1" max="12" maxlength="2" placeholder="DD">
-                <input id="year" type="text" inputmode="numeric" min="-6000" max="2023" maxlength="4" placeholder="YYYY">
-            </div>
-            <label for="past-birthday" min="0">An age you once were</label>
-            <input id="past-birthday" type="text" inputmode="numeric">
-            <label for="future-birthday">An age you will be in the future</label>
-            <input id="future-birthday" type="text" inputmode="numeric">
-            <label for="planet">Select a Celestial Object</label>
-            <select id="planet">
-                <option value="mercury" selected>Mercury</option>
-                <option value="venus">Venus</option>
-                <option value="moon">The Moon</option>
-                <option value="mars">Mars</option>
-                <option value="jupiter">Jupiter</option>
-                <option value="saturn">Saturn</option>
-                <option value="uranus">Uranus</option>
-                <option value="neptune">Neptune</option>
-                <option value="pluto">Pluto</option>
-            </select>
-            <button type="submit">Calculate</button>
-        </form>
-    </div>
-    <div id="musings">
+    <div id="primary">
+        <div class="block" id="title">
+            <h1>Mystical Cosmic Calculator</h1>
+        </div>
+        <div class="block" id="main-form">
+            <form id="form">
+                <div class="form-input">
+                    <div class="form-row">
+                        <label for="dob">Date of Birth</label>
+                        <div id="dob">
+                            <input id="month" type="number" min="1" max="12" maxlength="2" placeholder="MM" required>
+                            <input id="day" type="number" min="1" max="31" maxlength="2" placeholder="DD" required>
+                            <input id="year" type="number" min="-27000" max="2023" maxlength="4" placeholder="YYYY" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-input">
+                    <div class="form-row">
+                        <label for="past-birthday" class="hidden">An age you once were</label>
+                        <input id="past-birthday" type="number" min="0" placeholder="3">
+                    </div>
+                    <div class="form-row">
+                        <label for="future-birthday" class="hidden">An age you will be in the future</label>
+                        <input id="future-birthday" type="number" placeholder="103" >
+                    </div>                  
+                </div>
+                <div class="form-input">
+                    <label for="planet">Select a Celestial Object</label>
+                    <select id="planet">
+                        <option value="mercury" selected>Mercury</option>
+                        <option value="venus">Venus</option>
+                        <option value="moon">The Moon</option>
+                        <option value="mars">Mars</option>
+                        <option value="jupiter">Jupiter</option>
+                        <option value="saturn">Saturn</option>
+                        <option value="uranus">Uranus</option>
+                        <option value="neptune">Neptune</option>
+                        <option value="pluto">Pluto</option>
+                    </select>
+                </div>
+                <button type="submit">Calculate</button>
+            
+            </form>
+        </div>
+        <div class="block" id="musings">
+        </div>
     </div>
 </body>
 </html>
