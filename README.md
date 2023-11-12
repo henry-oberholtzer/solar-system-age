@@ -7,6 +7,9 @@ A JS application by Henry Oberholtzer
 ## Technologies Used
 
 *   JavaScript
+*   SASS
+*   HTML
+*   CSS
 
 ## Description
 

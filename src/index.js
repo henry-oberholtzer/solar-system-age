@@ -1,4 +1,4 @@
-import "./css/styles.css";
+import "./css/styles.scss";
 import PlanetaryAge from "./js/planetaryage";
 
 const printResults = (planetaryAgeObject) => {
