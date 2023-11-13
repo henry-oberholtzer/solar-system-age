@@ -1,60 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&family=Zen+Dots&display=swap");
+
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "VT323";
 }
+
+$monitor-glow: #2d3a2f;
+$monitor-dark: #101510;
+$monitor-gradient: radial-gradient($monitor-glow, $monitor-dark);
+$text-color: #70b374;
+$logo-color: #bec2cb;
+$frame-left: #31343c;
+$frame-top: #3d404c;
+$frame-bottom: #4a4e56;
+$frame-right: #565b5f;
+$frame-size: 2rem;
+$frame-gradient: linear-gradient($frame-top, $frame-right, $frame-bottom) 30;
 
 body {
-    font-family: sans-serif;
+    background-image: $monitor-gradient;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    color: $text-color;
+    #monitor-frame {
+        width: inherit;
+        height: inherit;
+        border: 2.5rem solid;
+        border-image: $frame-gradient;
+        #monitor-border {
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            border: calc($frame-size/1.25) solid $frame-left;
+            border-right: calc($frame-size/1.25) solid $frame-right;
+            border-top: $frame-size solid $frame-top;
+            border-bottom: $frame-size solid $frame-bottom;
+        }
+    }
 }
 
-#primary {
-    margin: 5rem;
+#monitor-line {
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid $frame-right;
 }
 
 .block {
-    width: 22rem;
-    margin: 2rem auto;
-    padding: 1rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
+    border: 0.11rem solid $text-color;
+    padding: 0.2rem;
+    margin: 1rem;
+    line-height: 2rem;
+    padding-left: 0.75rem;
 }
 
 #title {
-    width: 36rem;
+    background-color: #70b374;
+}
+
+h1 {
+    color: transparent;
+    background-image: $monitor-gradient;
+    background-clip: text;
+}
+
+h2,
+a {
+    font-family: "Zen Dots";
+    text-decoration: none;
+    color: $logo-color;
+    text-shadow:
+        -1px 1px 0 $frame-left,
+        1px 1px 0 $frame-top,
+        1px -1px 0 $frame-right,
+        -1px -1px 0 $frame-bottom;
+    opacity: 50%;
+    text-align: center;
     margin: auto;
-    text-align: center;
-    border: none;
+    padding-top: 0.5rem;
 }
 
-.form-input {
-    display: flex;
-    flex-direction: row;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem 0;
-}
-
-input {
-    width: 1.75rem;
-    display: inline;
+@mixin controls {
+    background-color: transparent;
+    border: 0.11rem solid $text-color;
+    color: $text-color;
     padding: 0.1rem;
-    text-align: center;
+    padding-left: 0.2rem;
 }
 
-#year, #future-birthday {
-    width: 3rem;
-}
 
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+@mixin controls-invert {
+    background-color: $text-color;
+    color: $monitor-dark;
+    outline: none;
+}
+
+button, input, select {
+    @include controls();
+}
+
+select:focus, input:focus {
+    transition: all 0.1s ease;
+    @include controls-invert()
+}
+
+button:hover {
+    @include controls-invert();
+}
+
+#month, #day {
+    width: calc(3ch + 0.2rem);
+}
+
+#year {
+    width: calc(5ch + 0.2rem);
 }
