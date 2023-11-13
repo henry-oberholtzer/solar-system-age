@@ -2,7 +2,9 @@ import "./css/styles.scss";
 import PlanetaryAge from "./js/planetaryage";
 
 const printResults = (planetaryAgeObject) => {
-    document.getElementById("musings").innerHTML = "";
+    const musings = document.getElementById("musings");
+    musings.setAttribute("class", "hidden");
+    musings.innerHTML = "";
     const date = planetaryAgeObject.dob;
     const month = date.toLocaleString("default", { month: "long" });
     const weekday = date.toLocaleString("default", { weekday: "long" });
@@ -17,7 +19,6 @@ const printResults = (planetaryAgeObject) => {
     const solarAge = planetaryAgeObject.solarSystemAge();
     const yearsUntil = planetaryAgeObject.yearsUntil();
     const yearsSince = planetaryAgeObject.yearsSince();
-    const musings = document.getElementById("musings");
     const paragraph = document.createElement("p");
     const introString = `You were born in the earth-year ${year}, during the month of ${month}, on a ${weekday}. `;
     const secondString = `Since then, you haved spent ${ageEarthDays} days on earth, or in only a slightly less impressive number, ${ageEarthYears} years. `;
@@ -52,6 +53,7 @@ const printResults = (planetaryAgeObject) => {
         sixthString(chosenPlanet, yearsSince, birthdayPast)
     );
     musings.append(paragraph);
+    musings.setAttribute("class", "block");
 };
 
 const printError = () => {

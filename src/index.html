@@ -11,30 +11,14 @@
                 <div id="monitor-border">
                     <div id="primary">
                         <div class="block" id="title">
-                            <h1>Mysterious Galactic Calculator</h1>
+                            <h1>Mysterious Galactic Calculator v00.00.20</h1>
                         </div>
                         <div class="block" id="main-form">
                             <form id="form">
                                 <div class="form-input">
                                     <div class="form-row">
-                                        <label for="dob">Date of Birth</label>
+                                        <label for="dob">Date of Birth:</label>
                                         <div id="dob">
-                                            <input
-                                                id="month"
-                                                type="number"
-                                                min="1"
-                                                max="12"
-                                                maxlength="2"
-                                                placeholder="MM"
-                                                required />
-                                            <input
-                                                id="day"
-                                                type="number"
-                                                min="1"
-                                                max="31"
-                                                maxlength="2"
-                                                placeholder="DD"
-                                                required />
                                             <input
                                                 id="year"
                                                 type="number"
@@ -43,38 +27,55 @@
                                                 maxlength="4"
                                                 placeholder="YYYY"
                                                 required />
+                                                <input
+                                                    id="day"
+                                                    type="number"
+                                                    min="1"
+                                                    max="31"
+                                                    maxlength="2"
+                                                    placeholder="DD"
+                                                    required />
+                                            <input
+                                                id="month"
+                                                type="number"
+                                                min="1"
+                                                max="12"
+                                                maxlength="2"
+                                                placeholder="MM"
+                                                required />
                                         </div>
                                     </div>
+                                    <hr />
                                 </div>
                                 <div class="form-input">
                                     <div class="form-row">
-                                        <label
-                                            for="past-birthday"
-                                            class="hidden"
-                                            >An age you once were</label
+                                        <label for="past-birthday"
+                                            >An age you once were:</label
                                         >
                                         <input
                                             id="past-birthday"
                                             type="number"
                                             min="0"
-                                            placeholder="3" />
+                                            placeholder="3"
+                                            maxlength="4" />
                                     </div>
+                                    <hr />
                                     <div class="form-row">
-                                        <label
-                                            for="future-birthday"
-                                            class="hidden"
+                                        <label for="future-birthday"
                                             >An age you will be in the
-                                            future</label
+                                            future:</label
                                         >
                                         <input
                                             id="future-birthday"
                                             type="number"
-                                            placeholder="103" />
+                                            placeholder="103"
+                                            maxlength="4" />
                                     </div>
+                                    <hr />
                                 </div>
-                                <div class="form-input">
+                                <div class="form-input form-row">
                                     <label for="planet"
-                                        >Select a Celestial Object</label
+                                        >Select a Celestial Object:</label
                                     >
                                     <select id="planet">
                                         <option value="mercury" selected>
@@ -90,14 +91,19 @@
                                         <option value="pluto">Pluto</option>
                                     </select>
                                 </div>
-                                <button type="submit">Calculate</button>
+                                <hr />
+                                <div class="form-row" id="button">
+                                    <button type="submit">Calculate</button>
+                                </div>
                             </form>
                         </div>
-                        <div class="block" id="musings"></div>
+                        <div class="hidden" id="musings"></div>
                     </div>
                 </div>
             </div>
-            <a href="https://www.henryoberholtzer.com"><h2>henry_oberholtzer</h2></a>
+            <a href="https://www.henryoberholtzer.com"
+                ><h2 id="logo">henry_oberholtzer</h2></a
+            >
         </div>
     </body>
 </html>
