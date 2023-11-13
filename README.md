@@ -35,8 +35,9 @@ This projects uses a JS class constructor and methods to return a users age base
 ## Setup & Installation Requirements
 
 *   Download the [zip folder](https://github.com/henry-oberholtzer/solar-system-age/archive/refs/heads/main.zip) from GitHub
-*   Open the folder in Terminal or your preffered coding interface, run "npm install"
+*   Open the folder in Terminal or your preffered coding interface, run "npm install" to download packages
 *   To view the application run "npm run start"
+*   Alternatively - check out [the application on GitHub Pages](https://henry-oberholtzer.github.io/solar-system-age/)
 
 ## Known Bugs
 
