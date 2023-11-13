@@ -13,7 +13,7 @@ A JS application by Henry Oberholtzer
 
 ## Description
 
-This projects uses a JS class constructor and methods to return a users age 
+This projects uses a JS class constructor and methods to return a users age based on a the orbit of a chosen celestial object.
 
 ## User Stories
 
@@ -40,7 +40,7 @@ This projects uses a JS class constructor and methods to return a users age
 
 ## Known Bugs
 
-*   None
+*  Not full set up for web
 
 ## License
 

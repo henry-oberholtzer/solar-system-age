@@ -79,15 +79,13 @@ h1 {
     background-clip: text;
 }
 
-#logo, a {
+#logo,
+a {
     font-family: "Zen Dots";
     text-decoration: none;
     color: $logo-color;
-    text-shadow:
-        -2px 2px 0 $frame-left,
-        2px 2px 0 $frame-top,
-        2px -2px 0 $frame-right,
-        -2px -2px 0 $frame-bottom;
+    text-shadow: -2px 2px 0 $frame-left, 2px 2px 0 $frame-top,
+        2px -2px 0 $frame-right, -2px -2px 0 $frame-bottom;
     opacity: 50%;
     text-align: center;
     margin: auto;
@@ -97,13 +95,9 @@ h1 {
 #logo:hover {
     transition: all 0.5s ease-in-out;
     opacity: 100%;
-    text-shadow:
-        -4px 4px 0 $frame-left,
-        4px 4px 0 $frame-top,
-        4px -4px 0 $frame-right,
-        -4px -4px 0 $frame-bottom;
+    text-shadow: -4px 4px 0 $frame-left, 4px 4px 0 $frame-top,
+        4px -4px 0 $frame-right, -4px -4px 0 $frame-bottom;
 }
-
 
 .hidden {
     visibility: hidden;
@@ -118,14 +112,13 @@ h1 {
     margin: 0;
 }
 
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
@@ -135,24 +128,30 @@ input[type=number] {
     outline: none;
 }
 
-button, input, select {
+button,
+input,
+select {
     @include controls();
 }
 
-select:focus, input:focus {
+select:focus,
+input:focus {
     transition: all 0.3s ease;
-    @include controls-invert()
+    @include controls-invert();
 }
 
 button:hover {
     @include controls-invert();
 }
 
-#month, #day {
+#month,
+#day {
     width: calc(3ch + 0.2rem);
 }
 
-#year, #future-birthday, #past-birthday {
+#year,
+#future-birthday,
+#past-birthday {
     width: calc(5ch + 0.2rem);
 }
 
@@ -160,14 +159,14 @@ button:hover {
     width: 100%;
     display: block;
     justify-items: space-between;
-    
 }
 
 #dob {
     display: inline;
 }
 
-input, select {
+input,
+select {
     float: right;
 }
 
