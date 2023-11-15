@@ -1,4 +1,5 @@
 import PlanetaryAge from "../src/js/planetaryage.js";
+import timekeeper from 'timekeeper';
 
 describe("PlanetaryAge", () => {
     let mercury
@@ -10,7 +11,8 @@ describe("PlanetaryAge", () => {
     let uranus
     let neptune
     let pluto
-    beforeEach(() => {
+    beforeAll(() => {
+        timekeeper.freeze(new Date('2023-11-11'));
         mercury = new PlanetaryAge(6, 27, 1998);
         venus = new PlanetaryAge(6, 27, 1998, "venus", 100, 1);
         moon = new PlanetaryAge(6, 27, 1998, "moon", 100, 1);
@@ -20,6 +22,10 @@ describe("PlanetaryAge", () => {
         uranus = new PlanetaryAge(6, 27, 1998, "uranus", 100, 1);
         neptune = new PlanetaryAge(6, 27, 1998, "neptune", 100, 1);
         pluto = new PlanetaryAge(6, 27, 1998, "pluto", 100, 1);
+    });
+
+    afterAll(() => {
+        timekeeper.reset();
     });
     
     test("Should create an object that accepts and stores a day, month and year of birth from a user", () => {
