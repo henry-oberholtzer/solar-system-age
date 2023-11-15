@@ -10,6 +10,8 @@ A JS application by Henry Oberholtzer
 *   SASS
 *   HTML
 *   CSS
+*   Webpack
+*   Jest
 
 ## Description
 
@@ -38,6 +40,7 @@ This projects uses a JS class constructor and methods to return a users age base
 *   Open the folder in Terminal or your preffered coding interface, run "npm install" to download packages
 *   To view the application run "npm run start"
 *   Alternatively - check out [the application on GitHub Pages](https://henry-oberholtzer.github.io/solar-system-age/)
+*   Tests can be run with "npm run test"
 
 ## Known Bugs
 
